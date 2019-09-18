@@ -7,10 +7,15 @@ RUN yum -y install \
         centos-release-scl \
     && yum clean all && rm -rf /var/cache/yum /var/lib/rpm/__db*
 
-# install ruby 2.5
+# Install ruby 2.5
 RUN yum -y install rh-ruby25 \
-    && scl enable rh-ruby25 bash \
     && yum clean all && rm -rf /var/cache/yum /var/lib/rpm/__db*
+
+ENV X_SCLS=rh-ruby25
+ENV LD_LIBRARY_PATH=/opt/rh/rh-ruby25/root/usr/local/lib64:/opt/rh/rh-ruby25/root/usr/lib64
+ENV PATH /opt/rh/rh-ruby25/root/usr/local/bin:/opt/rh/rh-ruby25/root/usr/bin:$PATH
+ENV XDG_DATA_DIRS /opt/rh/rh-ruby25/root/usr/local/share:/opt/rh/rh-ruby25/root/usr/share:/usr/local/share:/usr/share
+ENV PKG_CONFIG_PATH=/opt/rh/rh-ruby25/root/usr/local/lib64/pkgconfig:/opt/rh/rh-ruby25/root/usr/lib64/pkgconfig
 
 # install Capistrano and another dependencies
 RUN gem install --no-document --minimal-deps \
