@@ -1,5 +1,9 @@
 version: "3"
 services:
+  jenkins-docker:
+    build:
+      context: docker
+    image: aursu/jenkins:2.195-docker-19.03.2
   jenkins-cap-centos:
     volumes:
       - /share/jenkins:/var/jenkins_home
