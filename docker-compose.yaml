@@ -1,12 +1,24 @@
 version: "3"
 services:
+  jenkins-cap-centos:
+    volumes:
+      - /share/jenkins:/var/jenkins_home
+      - /share/deploy:/share/deploy
+    build:
+      context: .
+      dockerfile: Dockerfile-centos
+    image: aursu/jenkins:2.195-centos-cap-3.11
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    restart: always
   jenkins-cap:
     volumes:
       - /share/jenkins:/var/jenkins_home
       - /share/deploy:/share/deploy
     build:
       context: .
-    image: aursu/jenkins:2.195-centos-cap-3.11
+    image: aursu/jenkins:2.195-cap-3.11
     ports:
       - "8080:8080"
       - "50000:50000"
