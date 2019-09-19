@@ -18,8 +18,7 @@ RUN gem install --no-document --minimal-deps \
         capistrano-composer \
         capistrano-file-permissions \
         capistrano-harrow \
-        capistrano-symfony \
-        rollbar
+        capistrano-symfony
 
 USER jenkins
 
