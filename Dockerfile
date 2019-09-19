@@ -11,6 +11,9 @@ RUN apt-get update \
         libc6-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# upgrade rubygems
+RUN gem update --system --no-document
+
 # install Capistrano and another dependencies
 RUN gem install --no-document --minimal-deps \
         capistrano:3.11.1 \
@@ -18,7 +21,8 @@ RUN gem install --no-document --minimal-deps \
         capistrano-composer \
         capistrano-file-permissions \
         capistrano-harrow \
-        capistrano-symfony
+        capistrano-symfony \
+        io-console
 
 USER jenkins
 
