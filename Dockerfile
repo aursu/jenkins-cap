@@ -19,8 +19,6 @@ RUN gem install --no-document --minimal-deps \
         capistrano-file-permissions \
         capistrano-harrow \
         capistrano-symfony \
-        net-scp \
-        net-ssh \
         rollbar
 
 USER jenkins
