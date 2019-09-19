@@ -7,7 +7,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-centos
-    image: aursu/jenkins:2.195-centos-cap-3.11
+    image: aursu/jenkins:2.195-centos-cap-3.11-b5
     ports:
       - "8080:8080"
       - "50000:50000"
@@ -18,7 +18,7 @@ services:
       - /share/deploy:/share/deploy
     build:
       context: .
-    image: aursu/jenkins:2.195-cap-3.11-b4
+    image: aursu/jenkins:2.195-cap-3.11-b5
     ports:
       - "8080:8080"
       - "50000:50000"
