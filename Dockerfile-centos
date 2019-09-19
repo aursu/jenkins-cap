@@ -22,7 +22,7 @@ ENV XDG_DATA_DIRS /opt/rh/rh-ruby25/root/usr/local/share:/opt/rh/rh-ruby25/root/
 ENV PKG_CONFIG_PATH=/opt/rh/rh-ruby25/root/usr/local/lib64/pkgconfig:/opt/rh/rh-ruby25/root/usr/lib64/pkgconfig
 
 # upgrade rubygems
-RUN gem update --system --no-document
+RUN gem update --system --no-document --install-dir /opt/rh/rh-ruby25/root/usr/share/gems
 
 # install Capistrano and another dependencies
 RUN gem install --no-document --minimal-deps \
