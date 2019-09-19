@@ -8,7 +8,7 @@ services:
   jenkins-docker:
     build:
       context: docker
-    image: aursu/jenkins:2.195-docker-19.03.2-b1
+    image: aursu/jenkins:2.195-docker-19.03.2-b2
   jenkins-cap-centos:
     volumes:
       - /share/jenkins:/var/jenkins_home
