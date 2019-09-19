@@ -18,7 +18,7 @@ services:
       - /share/deploy:/share/deploy
     build:
       context: .
-    image: aursu/jenkins:2.195-cap-3.11
+    image: aursu/jenkins:2.195-cap-3.11-b2
     ports:
       - "8080:8080"
       - "50000:50000"
