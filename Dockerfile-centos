@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.195-centos
+FROM aursu/jenkins:2.195-centos-docker-19.03.2-b1
 
 USER root
 # Software collections from the CentOS SCLo SIG
