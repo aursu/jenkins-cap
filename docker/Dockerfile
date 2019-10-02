@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.195
+FROM jenkins/jenkins:2.198
 
 ARG COMPOSE_VERSION=1.24.1
 
