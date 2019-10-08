@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.198-centos
+FROM jenkins/jenkins:2.199-centos
 
 ARG DOCKER_VERSION=19.03.2
 ARG COMPOSE_VERSION=1.24.1
