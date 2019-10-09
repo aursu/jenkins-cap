@@ -1,4 +1,4 @@
-FROM aursu/jenkins:2.199-docker-19.03.3-b1
+FROM aursu/jenkins:2.198-docker-19.03.3-b1
 
 USER root
 
@@ -16,7 +16,7 @@ RUN gem update --system --no-document
 
 # install Capistrano and another dependencies
 RUN gem install --no-document --minimal-deps \
-        capistrano:3.11.1 \
+        capistrano:3.11.2 \
         bundler \
         capistrano-composer \
         capistrano-file-permissions \

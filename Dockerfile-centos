@@ -1,4 +1,4 @@
-FROM aursu/jenkins:2.199-centos-docker-19.03.3-b1
+FROM aursu/jenkins:2.198-centos-docker-19.03.3-b1
 
 USER root
 # Software collections from the CentOS SCLo SIG
@@ -26,7 +26,7 @@ RUN gem update --system --no-document --install-dir /opt/rh/rh-ruby25/root/usr/s
 
 # install Capistrano and another dependencies
 RUN gem install --no-document --minimal-deps \
-        capistrano:3.11.1 \
+        capistrano:3.11.2 \
         bundler \
         capistrano-composer \
         capistrano-file-permissions \
