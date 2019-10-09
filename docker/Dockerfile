@@ -19,7 +19,7 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        docker-ce-cli=5:19.03.2~3-0~debian-stretch \
+        docker-ce-cli=5:19.03.3~3-0~debian-stretch \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl \

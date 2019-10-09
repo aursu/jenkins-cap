@@ -4,11 +4,11 @@ services:
     build:
       context: docker
       dockerfile: Dockerfile-centos
-    image: aursu/jenkins:2.199-centos-docker-19.03.2-b1
+    image: aursu/jenkins:2.199-centos-docker-19.03.3-b1
   jenkins-docker:
     build:
       context: docker
-    image: aursu/jenkins:2.199-docker-19.03.2-b1
+    image: aursu/jenkins:2.199-docker-19.03.3-b1
   jenkins-cap-centos:
     volumes:
       - /share/jenkins:/var/jenkins_home
