@@ -1,28 +1,17 @@
-FROM aursu/jenkins:2.198-centos-docker-19.03.3-b1
+FROM aursu/jenkins:2.203-centos-docker-19.03.4-b1
 
 USER root
-# Software collections from the CentOS SCLo SIG
-RUN yum -y install \
-        centos-release-scl-rh \
-        centos-release-scl \
-    && yum clean all && rm -rf /var/cache/yum /var/lib/rpm/__db*
 
 # Install ruby 2.5
-RUN yum -y install \
+RUN dnf -y install \
         gcc \
         make \
-        rh-ruby25 \
-        rh-ruby25-ruby-devel \
-    && yum clean all && rm -rf /var/cache/yum /var/lib/rpm/__db*
-
-ENV X_SCLS=rh-ruby25
-ENV LD_LIBRARY_PATH=/opt/rh/rh-ruby25/root/usr/local/lib64:/opt/rh/rh-ruby25/root/usr/lib64
-ENV PATH /opt/rh/rh-ruby25/root/usr/local/bin:/opt/rh/rh-ruby25/root/usr/bin:$PATH
-ENV XDG_DATA_DIRS /opt/rh/rh-ruby25/root/usr/local/share:/opt/rh/rh-ruby25/root/usr/share:/usr/local/share:/usr/share
-ENV PKG_CONFIG_PATH=/opt/rh/rh-ruby25/root/usr/local/lib64/pkgconfig:/opt/rh/rh-ruby25/root/usr/lib64/pkgconfig
+        ruby \
+        ruby-devel \
+    && dnf clean all && rm -rf /var/cache/dnf /var/lib/rpm/__db*
 
 # upgrade rubygems
-RUN gem update --system --no-document --install-dir /opt/rh/rh-ruby25/root/usr/share/gems
+RUN gem update --system --no-document
 
 # install Capistrano and another dependencies
 RUN gem install --no-document --minimal-deps \

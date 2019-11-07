@@ -1,23 +1,23 @@
-FROM jenkins/jenkins:2.198-centos
+FROM jenkins/jenkins:2.203-centos
 
-ARG DOCKER_VERSION=19.03.3
+ARG DOCKER_VERSION=19.03.4
 ARG COMPOSE_VERSION=1.24.1
 
 USER root
 
-RUN yum -y install \
+RUN dnf -y install \
 		device-mapper-persistent-data \
 		lvm2 \
 		yum-utils \
-	&& yum clean all && rm -rf /var/cache/yum /var/lib/rpm/__db*
+	&& dnf clean all && rm -rf /var/cache/dnf /var/lib/rpm/__db*
 
 RUN yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 
-RUN yum -y install \
+RUN dnf -y install \
 		docker-ce-cli-${DOCKER_VERSION} \
-	&& yum clean all && rm -rf /var/cache/yum /var/lib/rpm/__db*
+	&& dnf clean all && rm -rf /var/cache/dnf /var/lib/rpm/__db*
 
 RUN curl \
 	-L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m) \
