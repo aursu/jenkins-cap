@@ -12,7 +12,7 @@ RUN dnf --setopt=install_weak_deps=False -y install \
     && dnf clean all && rm -rf /var/cache/dnf /var/lib/rpm/__db*
 
 # upgrade rubygems
-RUN gem install rubygems-update --install-dir /usr/share/gems \
+RUN gem install rubygems-update --no-document --install-dir /usr/share/gems \
     && gem update --system --no-document
 
 # install Capistrano and another dependencies
