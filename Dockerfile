@@ -1,4 +1,4 @@
-FROM aursu/jenkins:2.203-docker-19.03.4-b1
+FROM aursu/jenkins:2.204-docker-19.03.4-b1
 
 USER root
 
