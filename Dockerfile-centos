@@ -3,9 +3,10 @@ FROM aursu/jenkins:2.203-centos-docker-19.03.4-b1
 USER root
 
 # Install ruby 2.5
-RUN dnf -y install \
+RUN dnf --setopt=install_weak_deps=False -y install \
         gcc \
         make \
+        redhat-rpm-config \
         ruby \
         ruby-devel \
     && dnf clean all && rm -rf /var/cache/dnf /var/lib/rpm/__db*
