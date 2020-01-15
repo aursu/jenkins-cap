@@ -1,6 +1,6 @@
-FROM jenkins/jenkins:2.204
+FROM jenkins/jenkins:2.214
 
-ARG COMPOSE_VERSION=1.24.1
+ARG COMPOSE_VERSION=1.25.1
 
 USER root
 
@@ -19,7 +19,7 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        docker-ce-cli=5:19.03.4~3-0~debian-stretch \
+        docker-ce-cli=5:19.03.5~3-0~debian-stretch \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl \

@@ -4,11 +4,11 @@ services:
     build:
       context: docker
       dockerfile: Dockerfile-centos
-    image: aursu/jenkins:2.204-centos-docker-19.03.4-b1
+    image: aursu/jenkins:2.214-centos-docker-19.03.5-b1
   jenkins-docker:
     build:
       context: docker
-    image: aursu/jenkins:2.204-docker-19.03.4-b1
+    image: aursu/jenkins:2.214-docker-19.03.5-b1
   jenkins-cap-centos:
     volumes:
       - /share/jenkins:/var/jenkins_home
@@ -16,7 +16,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-centos
-    image: aursu/jenkins:2.204-centos-cap-3.11.2-b1
+    image: aursu/jenkins:2.214-centos-cap-3.11.2-b1
     ports:
       - "8080:8080"
       - "50000:50000"
@@ -27,7 +27,7 @@ services:
       - /share/deploy:/share/deploy
     build:
       context: .
-    image: aursu/jenkins:2.204-cap-3.11.2-b1
+    image: aursu/jenkins:2.214-cap-3.11.2-b1
     ports:
       - "8080:8080"
       - "50000:50000"
